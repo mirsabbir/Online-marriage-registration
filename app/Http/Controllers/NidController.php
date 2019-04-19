@@ -14,7 +14,7 @@ class NidController extends Controller
      */
     public function index()
     {
-        return view('nid.index');
+        return view('nid.index')->with(['nids'=>Nid::paginate(15)]);
     }
 
     /**
