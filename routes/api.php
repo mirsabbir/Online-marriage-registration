@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\District;
+use App\Upazila;
+use App\Division;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +18,13 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('getdist', function(Request $request){
+    $p = Division::where('bn_name',$request->div)->first()->id;
+    return District::where('division_id',$p)->get();
+});
+Route::get('getupz', function(Request $request){
+    $p = District::where('bn_name',$request->dist)->first()->id;
+    return Upazila::where('district_id',$p)->get();
 });
