@@ -177,16 +177,16 @@ class MarriageController extends Controller
     }
     private function valid2($request){
         $request->validate([
-            // 'witness1_name' => 'required',
-            // 'witness2_name' => 'required',
-            // 'witness1_nid' => 'required|nid_varify:witness1_name,witness1_father,witness1_mother,witness1_dob',
-            // 'witness2_nid' => 'required|nid_varify:witness2_name,witness2_father,witness2_mother,witness2_dob',
-            // 'witness1_father' => 'required',
-            // 'witness1_mother' => 'required',
-            // 'witness2_father' => 'required',
-            // 'witness2_mother' => 'required',
-            // 'witness1_dob' => 'required|date_format:Y-m-d',
-            // 'witness2_dob' => 'required|date_format:Y-m-d',
+            'witness1_name' => 'required',
+            'witness2_name' => 'required',
+            'witness1_nid' => 'required|nid_varify:witness1_name,witness1_father,witness1_mother,witness1_dob',
+            'witness2_nid' => 'required|nid_varify:witness2_name,witness2_father,witness2_mother,witness2_dob',
+            'witness1_father' => 'required',
+            'witness1_mother' => 'required',
+            'witness2_father' => 'required',
+            'witness2_mother' => 'required',
+            'witness1_dob' => 'required|date_format:Y-m-d',
+            'witness2_dob' => 'required|date_format:Y-m-d',
         ]);
         foreach($request->all() as $res => $val){
             $request->session()->put($res,$val);

@@ -5,6 +5,7 @@ use App\District;
 use App\Upazila;
 use App\Division;
 use App\Nid;
+use App\Marriage;
 
 /*
 |--------------------------------------------------------------------------

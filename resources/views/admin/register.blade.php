@@ -42,50 +42,32 @@
                     <div class="card-header"><strong>বর </strong><small> এর সম্পর্কে তথ্য </small></div>
                     <div class="card-body card-block">
                         <div class="form-group">
-                            <label for="company" class=" form-control-label">বরের নাম ( বাংলায় )</label>
-                            <input type="text"  placeholder="" class="form-control" name="groom_name">
-                        </div>
-                        <div class="form-group">
                             <label for="vat" class=" form-control-label">জাতীয় পরিচয় পত্রের নম্বর </label>
-                            <input type="text"  placeholder="1234567890" class="form-control" name="groom_nid">
+                            <input  type="text"  placeholder="1234567890" class="form-control" name="groom_nid" v-model="groom_nid">
+                        </div>
+                        <div class="groom-block">
+                        <div class="form-group">
+                            <label for="company" class=" form-control-label">বরের নাম ( বাংলায় )</label>
+                            <input readonly type="text"  placeholder="" class="form-control"  v-model="groom_name" name="groom_name" >
                         </div>
                         <div class="form-group">
                             <label for="street" class=" form-control-label">জন্ম তারিখ </label>
-                            <input type="text"  placeholder="YYYY-MM-DD" class="form-control" name="groom_dob">
+                            <input readonly type="text"  placeholder="YYYY-MM-DD" class="form-control"  v-model="groom_dob" name="groom_dob">
                         </div>
                         
                         <div class="form-group">
                             <label for="city" class=" form-control-label">পিতার নাম ( বাংলায় )</label>
-                            <input type="text"  placeholder="" class="form-control" name="groom_father">
+                            <input readonly type="text"  placeholder="" class="form-control"  v-model="groom_fathers_name" name="groom_father">
                         </div>
                         
                         <div class="form-group">
                             <label for="country" class=" form-control-label">মাতার নাম ( বাংলায় )</label>
-                            <input type="text" id="country" placeholder="" class="form-control" name="groom_mother">
+                            <input readonly type="text" id="country" placeholder="" class="form-control"  v-model="groom_mothers_name" name="groom_mother">
                         </div>
-                        <div class="form-group">
-                            <label for="country" class=" form-control-label">পূর্ব বিবাহিত কি না ?</label> &nbsp; &nbsp; &nbsp; &nbsp; 
-                            <label><input type="radio" name="__a" @click="show_prv_groom" value="1">হ্যা </label> 
-                            <label><input type="radio" name="__a" @click="hide_prv_groom" value="0">না </label>
                         </div>
+                        <button type="button" @click="groom" class="form-control btn btn-primary btn-block">তথ্য যাচাই করুন </button>
 
-                        <div id="__groom">
-
-                            <div class="form-group">
-                                <label for="country" class=" form-control-label">পূর্ব বিবাহিত স্ত্রীর নাম ( বাংলায় )</label>
-                                <input type="text" id="country" placeholder="" class="form-control" name="groom_prv_wife_name">
-                            </div>
-                            <div class="form-group">
-                                <label for="country" class=" form-control-label">পূর্ব বিবাহিত স্ত্রীর জাতীয় পরিচয় পত্রের নম্বর </label>
-                                <input type="text" id="country" placeholder="" class="form-control" name="groom_prv_wife_nid">
-                            </div>
-                            <div class="form-group">
-                                <label for="country" class=" form-control-label">সম্মতি আছে কি না ?</label>  &nbsp; &nbsp; &nbsp; &nbsp; 
-                                <label><input type="radio" name="groom_prv_approved">হ্যা </label> 
-                                <label><input type="radio" name="groom_prv_approved">না </label>
-                            </div>
-                            
-                        </div>
+                       
 
                     </div>
                 </div>
@@ -96,44 +78,32 @@
                     <div class="card-header"><strong>কনে </strong><small> এর সম্পর্কে তথ্য </small></div>
                     <div class="card-body card-block">
                         <div class="form-group">
-                            <label for="company" class=" form-control-label">কনের নাম ( বাংলায় )</label>
-                            <input type="text" id="company" placeholder="" class="form-control" name="bride_name">
-                        </div>
-                        <div class="form-group">
                             <label for="vat" class=" form-control-label">জাতীয় পরিচয় পত্রের নম্বর </label>
-                            <input type="text" id="vat" placeholder="1234567890" class="form-control" name="bride_nid">
+                            <input  type="text" id="vat" placeholder="1234567890" class="form-control" name="bride_nid" v-model="bride_nid">
+                        </div>
+                        <div class="bride-block">
+                        <div class="form-group">
+                            <label for="company" class=" form-control-label">কনের নাম ( বাংলায় )</label>
+                            <input readonly type="text" id="company" placeholder="" class="form-control" v-model="bride_name" name="bride_name">
                         </div>
                         <div class="form-group">
                             <label for="street" class=" form-control-label">জন্ম তারিখ </label>
-                            <input type="text" id="street" placeholder="YYYY-MM-DD" class="form-control" name="bride_dob">
+                            <input readonly type="text" id="street" placeholder="YYYY-MM-DD" class="form-control" v-model="bride_dob" name="bride_dob">
                         </div>
                         
                         <div class="form-group">
                             <label for="city" class=" form-control-label">পিতার নাম ( বাংলায় )</label>
-                            <input type="text" id="city" placeholder="" class="form-control" name="bride_father">
+                            <input readonly type="text" id="city" placeholder="" class="form-control" v-model="bride_fathers_name" name="bride_father">
                         </div>
                         
                         <div class="form-group">
                             <label for="country" class=" form-control-label">মাতার নাম ( বাংলায় )</label>
-                            <input type="text" id="country" placeholder="" class="form-control" name="bride_mother">
+                            <input readonly type="text" id="country" placeholder="" class="form-control" v-model="bride_mothers_name" name="bride_mother">
                         </div>
-                        <div class="form-group">
-                            <label for="country" class=" form-control-label">পূর্ব বিবাহিত কি না ?</label> &nbsp; &nbsp; &nbsp; &nbsp; 
-                            <label><input type="radio" name="__b" value="1" @click="show_prv_bride">হ্যা </label> 
-                            <label><input type="radio" name="__b" value="0" @click="hide_prv_bride">না </label>
                         </div>
-
-                    <div id="__bride">
-
-                        <div class="form-group">
-                            <label for="country" class=" form-control-label">পূর্ব বিবাহিত স্বামীর নাম ( বাংলায় )</label>
-                            <input type="text" id="country" placeholder="" class="form-control" name="bride_prv_husband_name">
-                        </div>
-                        <div class="form-group">
-                            <label for="country" class=" form-control-label">পূর্ব বিবাহিত স্বামীর জাতীয় পরিচয় পত্রের নম্বর </label>
-                            <input type="text" id="country" placeholder="" class="form-control" name="bride_prv_husband_nid">
-                        </div>
-                    </div>
+                        <button type="button" @click="bride" class="form-control btn btn-primary btn-block">তথ্য যাচাই করুন </button>
+                        
+                   
 
                     </div>
                 </div>
@@ -158,27 +128,59 @@
     let vm = new Vue({
         el: '.content',
         data:{
+            groom_name: '',
+            groom_fathers_name: '',
+            groom_mothers_name: '',
+            groom_dob: '',
+            bride_name: '',
+            bride_fathers_name: '',
+            bride_mothers_name: '',
+            bride_dob: '',
+            groom_nid: '',
+            bride_nid: ''
 
         },
         methods:{
-            show_prv_groom: function(){
-                $('#__groom').show();
-                
+            groom:function(){
+                axios.get('http://127.0.0.1:8000/api/nid?no='+vm.groom_nid)
+                .then(function (response) {
+                    var d = response.data;
+                    // handle success
+                    vm.groom_name = d.name;
+                    vm.groom_fathers_name = d.fathers_name;
+                    vm.groom_mothers_name= d.mothers_name;
+                    vm.groom_dob = d.dob;
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    
+                    console.log(error);
+                    $('.groom-block').hide();
+                });
+                $('.groom-block').show();
             },
-            show_prv_bride: function(){
-                $('#__bride').show();
-            },
-            hide_prv_groom: function(){
-                
-                $('#__groom').hide();
-            },
-            hide_prv_bride: function(){
-                $('#__bride').hide();
-            },
+            bride:function(){
+                axios.get('http://127.0.0.1:8000/api/nid?no='+vm.bride_nid)
+                .then(function (response) {
+                    var d = response.data;
+                    // handle success
+                    vm.bride_name = d.name;
+                    vm.bride_fathers_name = d.fathers_name;
+                    vm.bride_mothers_name= d.mothers_name;
+                    vm.bride_dob = d.dob;
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                    $('.bride-block').hide();
+                });
+                $('.bride-block').show();
+            }
         },
         mounted(){
-            $('#__groom').hide();
-            $('#__bride').hide();
+            $('.bride-block').hide();
+            $('.groom-block').hide();
         }
 
     });

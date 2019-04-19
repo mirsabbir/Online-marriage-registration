@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin','MarriageController@dashboard');
-Route::get('/admin/marriage/register', 'MarriageController@register');
-Route::post('/admin/marriage/register', 'MarriageController@registerPost');
-Route::get('/admin/marriage/index', 'MarriageController@index');
-Route::get('/admin/marriage/divorce', 'MarriageController@divorce');
-Route::get('/admin/marriage/update', 'MarriageController@update');
+Route::get('/admin','MarriageController@dashboard')->middleware(['auth','can:access-admin']);
+Route::get('/admin/marriage/register', 'MarriageController@register')->middleware(['auth','can:access-admin']);
+Route::post('/admin/marriage/register', 'MarriageController@registerPost')->middleware(['auth','can:access-admin']);
+Route::get('/admin/marriage/index', 'MarriageController@index')->middleware(['auth','can:access-admin']);
+Route::get('/admin/marriage/divorce', 'MarriageController@divorce')->middleware(['auth','can:access-admin']);
+Route::get('/admin/marriage/update', 'MarriageController@update')->middleware(['auth','can:access-admin']);
 
 
 
