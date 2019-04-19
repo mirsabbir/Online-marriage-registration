@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\District;
 use App\Upazila;
 use App\Division;
+use App\Nid;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,8 @@ Route::get('getdist', function(Request $request){
 Route::get('getupz', function(Request $request){
     $p = District::where('bn_name',$request->dist)->first()->id;
     return Upazila::where('district_id',$p)->get();
+});
+
+Route::get('nid', function(Request $request){
+    return Nid::where('no', $request->no)->firstOrFail();
 });

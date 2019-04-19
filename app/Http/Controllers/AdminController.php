@@ -27,6 +27,11 @@ class AdminController extends Controller
         //
     }
 
+    public function dashboard()
+    {
+        return view('nid.base');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

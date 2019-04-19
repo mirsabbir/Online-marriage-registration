@@ -27,5 +27,10 @@ Route::get('/admin/marriage/update', 'MarriageController@update');
 
 // nid
 
-Route::resource('/superadmin/nids', 'NidController');
-Route::resource('/superadmin/admins', 'AdminController');
+Route::resource('/superadmin/nids', 'NidController')->middleware(['auth','can:access-superadmin']);
+Route::resource('/superadmin/admins', 'AdminController')->middleware(['auth','can:access-superadmin']);
+Route::get('/superadmin', 'AdminController@dashboard')->middleware(['auth','can:access-superadmin']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
