@@ -39,7 +39,7 @@ class NidController extends Controller
         $request->validate([
             'name' => 'required',
             'name_bng' => 'required',
-            'dob' => 'required',
+            'dob' => 'required|date_format:Y-m-d',
             'fathers_name' => 'required',
             'mothers_name' => 'required',
             'division' => 'required',
@@ -98,6 +98,17 @@ class NidController extends Controller
      */
     public function update(Request $request, Nid $nid)
     {
+        $request->validate([
+            'name' => 'required',
+            'name_bng' => 'required',
+            'dob' => 'required|date_format:Y-m-d',
+            'fathers_name' => 'required',
+            'mothers_name' => 'required',
+            'division' => 'required',
+            'district' => 'required',
+            'upozilla' => 'required',
+            'sex' => 'required',
+        ]);
         
         $nid->name_eng = $request->name;
         $nid->name = $request->name_bng;

@@ -75,11 +75,11 @@
                 <ul class="nav navbar-nav">
                     
                     <li class="active">
-                        <a href="superadmin/admins"><i class="menu-icon fa fa-laptop"></i>Admins</a>
+                        <a href="/superadmin/admins"><i class="menu-icon fa fa-users"></i>Admins</a>
                     </li>
                     
                    <li class="active">
-                        <a href="superadmin/nids"><i class="menu-icon fa fa-laptop"></i>জাতীয় পরিচয়পত্র সমূহ </a>
+                        <a href="/superadmin/nids"><i class="menu-icon fa fa-address-card"></i>জাতীয় পরিচয়পত্র সমূহ </a>
                     </li>
 
                     

@@ -1,4 +1,4 @@
-@extends('admin.base')
+@extends('nid.base')
 
 @section('content')
 

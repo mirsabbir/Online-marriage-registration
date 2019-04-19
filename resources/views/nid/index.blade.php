@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+<a href="/superadmin/nids/create"><button class="btn btn-primary" style="margin-bottom:10px;">নতুন জাতীয় পরিচয় পত্র তৈরী করুন </button></a>
 <table class="table">
   <thead>
     <tr>
@@ -38,5 +38,6 @@
   </tbody>
 </table>
 
+<div style="margin-left:38%">{{$nids->links()}}</div>
 
 @endsection

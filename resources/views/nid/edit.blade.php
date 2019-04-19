@@ -4,6 +4,9 @@
 
 <div class="col-lg-12">
 <div class="card">
+    @if($errors->any())
+        <p class="alert alert-danger">{{$errors->first()}}</p>
+    @endif
     <form action="/superadmin/nids/{{$nid->id}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
